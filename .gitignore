@@ -1,0 +1,37 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+.next/
+out/
+dist/
+coverage/
+
+# OS / IDE
+.DS_Store
+.vscode/*.local.json
+
+# DB / data
+*.sql.gz
+*.dump
+*.sqlite
+*.db
+mariadb_data/
+
+# Logs
+*.log
+logs/

@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mariadb:11.8
+    container_name: investment_app_mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: root_password_change_me
+      MARIADB_DATABASE: investment_app
+      MARIADB_USER: investment_user
+      MARIADB_PASSWORD: investment_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./db/seed_dev.sql:/docker-entrypoint-initdb.d/01_seed_dev.sql:ro
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+volumes:
+  mariadb_data:
